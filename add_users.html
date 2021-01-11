@@ -57,15 +57,15 @@
         <form id="loginForm" class="p-4">
             <div class="form-group">
                 <label for="exampleInputEmail1">Username</label>
-                <input type="email" class="form-control inputField" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="text" class="form-control inputField" id="name">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control inputField" id="exampleInputPassword1">
+                <input type="password" class="form-control inputField" id="password">
             </div>
 
-            <button type="submit" class="btn btn-dark col-sm-12 submitBtn">Add user</button>
-            <button type="submit" class="btn btn-dark col-sm-12 submitBtn">Delete user</button>
+            <button type="button" class="btn btn-dark col-sm-12 submitBtn" id="add">Add user</button>
+            <button type="button" class="btn btn-dark col-sm-12 submitBtn" id="delete">Delete user</button>
 
 
         </form>
@@ -88,7 +88,8 @@
 
 <!-- footer end -->
 
-
+<script src="jquery-3.5.1.js"></script>
+<script src="main.js"></script>
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
