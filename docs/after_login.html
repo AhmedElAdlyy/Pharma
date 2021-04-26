@@ -14,41 +14,7 @@
 
 
 <!-- Header start -->
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light" id="myNav">
-
-    <div class="container">
-
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto">
-
-                <li class="nav-item">
-                    <a class="nav-link navBarItem" href="Sell.html">Sell</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link navBarItem" href="Buy.html">Buy</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle navBarItem" href="#" id="navbarDropdownMenuLink" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Username
-                    </a>
-                    <div class="dropdown-menu" id="menuOfDropDown" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item navBarItem" href="change_password.html">Change password</a>
-                        <a class="dropdown-item navBarItem" href="add_users.html"id="addUserLink">Add User</a>
-                        <a class="dropdown-item navBarItem" href="Index.html" id="logoutBtn">Log out</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
+<div id="header"></div>
 <!-- Header end -->
 
 <div class="container">
@@ -87,16 +53,23 @@
 
 
 <!-- footer start -->
-
+<!--
 <footer class="py-2 fixed-bottom mt-5">
 
     <p class="text-center" >Copyright &copy; Your website 2021</p>
 
-</footer>
-
+</footer>-->
+<div id="footer"></div>
 <!-- footer end -->
 
 <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+
+<script>
+    $(function () {
+        $('#header').load('../Templates/header.html');
+        $('#footer').load('../Templates/footer.html');
+    })
+</script>
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="../JS/main.js"></script>
 

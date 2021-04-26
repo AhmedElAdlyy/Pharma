@@ -13,6 +13,7 @@
 
 
 <!-- Header start -->
+<!--
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light" id="myNav">
 
@@ -47,7 +48,8 @@
         </div>
     </div>
 </nav>
-
+-->
+<div id="header" ></div>
 <!-- Header end -->
 
 <div class="d-flex justify-content-center align-items-center container" style="height: 500px;">
@@ -85,15 +87,21 @@
 
 <!-- footer start -->
 
-<footer class="py-2 fixed-bottom" >
-
-    <p class="text-center" >Copyright &copy; Your website 2021</p>
-
-</footer>
+<div id="footer" ></div>
 
 <!-- footer end -->
 
+
+
 <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+
+<script>
+    $(function () {
+        $('#header').load('../Templates/header.html');
+        $('#footer').load('../Templates/footer.html');
+    })
+</script>
+
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="../JS/main.js"></script>
 
