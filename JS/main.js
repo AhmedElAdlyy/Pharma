@@ -5,7 +5,7 @@ $(function () {
     db.transaction(function (tx) {
         tx.executeSql('CREATE TABLE IF NOT EXISTS Users (Id UNIQUE , Username , Password , IsAdmin)');
         tx.executeSql('CREATE TABLE IF NOT EXISTS Items (Id UNIQUE , Name , Quantity , Picture)');
-        tx.executeSql('CREATE TABLE IF NOT EXISTS Invoice (Id UNIQUE , Date , CustomerName , Type , ItemName , Quantity)');
+        tx.executeSql('CREATE TABLE IF NOT EXISTS Invoice (Id UNIQUE , TransactionDate , CustomerName , Type , ItemName , Quantity)');
 
 
         tx.executeSql('INSERT INTO USERS (Id , Username , Password , IsAdmin) VALUES (1 , "Admin" , "123" , TRUE )');
@@ -20,12 +20,26 @@ $(function () {
         })
     });
 
+    db.transaction(function (tx) {
+        tx.executeSql('SELECT COUNT(Id) AS lastItem FROM Items', [], function (tx, result) {
+            localStorage.lastItem = result.rows[0]['lastItem'];
+        })
+    });
+
+    db.transaction(function (tx) {
+        tx.executeSql('SELECT COUNT(Id) AS lastInvoice FROM Invoice', [], function (tx, res) {
+            localStorage.lastInvoice = res.rows[0]['lastInvoice'];
+        })
+    });
+
 
     if (sessionStorage.userId != null) {
 
         db.transaction(function (tx) {
 
-            tx.executeSql('SELECT Username FROM Users WHERE Id = ?'  , [sessionStorage.userId], function (tx, results) {
+            tx.executeSql(`SELECT Username
+                           FROM Users
+                           WHERE Id = ?`, [sessionStorage.userId], function (tx, results) {
 
                 if (results.rows.length > 0) {
                     var user = results.rows[0]['Username'];
@@ -39,7 +53,7 @@ $(function () {
 
         db.transaction(function (tx) {
 
-            tx.executeSql('SELECT IsAdmin FROM Users WHERE Id = ?' ,[sessionStorage.userId], function (tx, results) {
+            tx.executeSql('SELECT IsAdmin FROM Users WHERE Id = ?', [sessionStorage.userId], function (tx, results) {
 
                 if (results.rows.length > 0) {
 
@@ -48,8 +62,6 @@ $(function () {
                     if (admin != 1) {
 
                         $('#addUserLink').hide();
-
-
                     }
 
                 }
@@ -59,8 +71,16 @@ $(function () {
         })
 
         db.transaction(function (tx) {
-            tx.executeSql('SELECT ')
-        })
+            tx.executeSql('SELECT * FROM Items', [], function (tx, results) {
+                if (results.rows.length == 0) {
+                    $('#itemName').append('<option disabled>There is no Items</option>');
+                } else {
+                    $.each(results.rows, function (key, value) {
+                        $('#itemName').append(`<option value="${value['Id']}" >${value['Name']}</option>`)
+                    });
+                }
+            });
+        });
 
 
     }
@@ -75,7 +95,7 @@ $(function () {
 
         db.transaction(function (tx) {
 
-            tx.executeSql('SELECT Id FROM Users WHERE Username = "' + username + '" AND Password = "' + pass + '"', [], function (tx, results) {
+            tx.executeSql('SELECT Id FROM Users WHERE Username = ? AND Password = ?', [username, pass], function (tx, results) {
 
                 var records = results.rows.length;
 
@@ -192,17 +212,17 @@ $(function () {
 
 //-----------------------------------------------------------------------------------------------------
 
-    $('#buyItem').on("click", function () {
+    $('#AddItem').on("click", function () {
 
         var itemName = $('#itemName').val();
-        var quantity = $('#quantity').val();
         var imgBase = sessionStorage.imgBase;
 
         db.transaction(function (tx) {
 
+            localStorage.lastItem++;
 
             var sql = 'INSERT INTO Items (Id , Name , Quantity , Picture) VALUES (? , ? , ? , ?)';
-            tx.executeSql(sql, [1, itemName, quantity, imgBase], function () {
+            tx.executeSql(sql, [localStorage.lastItem, itemName, 0, imgBase], function () {
                 alert('Item Added successfully');
             })
         })
@@ -214,49 +234,74 @@ $(function () {
 //-----------------------------------------------------------------------------------------------------
 
 
-    $('#sellItem').on("click", function () {
+    $('#confirm').on("click", function () {
 
-        var soldItemName = $('#itemName').val();
-        var soldItemQuantity = $('#quantity').val();
         var cstName = $('#cstName').val();
+        var itemId = $('#itemName').val();
+        var qty = $('#quantity').val();
+        var type = $('#type').val();
 
 
         db.transaction(function (tx) {
+            tx.executeSql('SELECT * FROM Items WHERE Id = ? ', [itemId], function (tx, res) {
 
-            tx.executeSql('SELECT * FROM Items WHERE Name = "' + soldItemName + '"', [], function (tx, results) {
+                var itemName = res.rows[0]["Name"];
+                var itemQuantity = res.rows[0]["Quantity"];
+                localStorage.lastInvoice++;
 
-                var records = results.rows.length;
+                var d = new Date();
+                var day = d.getDate();
+                var month = d.getMonth() + 1;
+                var year = d.getFullYear();
 
-
-                if (records > 0) {
-
-
-                    var id = results.rows[0]['Id'];
-                    var oldQ = results.rows[0]['Quantity'];
-
-
-                    var sql = 'UPDATE Items SET Quantity = ? WHERE Id = ?';
-
-                    tx.executeSql(sql, [oldQ - soldItemQuantity, id], function () {
-
-                        var today = new Date();
+                var fullDate = `${day} / ${month} / ${year}`;
 
 
-                        var sql2 = 'INSERT into Invoice (Id , Date , CustomerName , Type , ItemName , Quantity) values (?,?,?,?,?,?) ';
+                if (type == 1) {
 
-                        tx.executeSql(sql2, [1, today.getDate(), cstName, 'sell', soldItemName, soldItemQuantity], function () {
+                    if(itemQuantity >= qty){
 
-                            alert("invoice created successfully")
+                        var insertSql = 'INSERT INTO Invoice (Id , TransactionDate , CustomerName , Type , ItemName , Quantity) VALUES (? , ? , ? , ? , ? , ?)';
+                        tx.executeSql(insertSql,
+                            [localStorage.lastInvoice, fullDate, cstName, type, itemName, qty],
+                            function (tx, res) {
+                                console.log(res);
+                                alert('Transaction Added');
+                            });
 
+                        tx.executeSql('UPDATE Items SET Quantity = ? WHERE Id = ?', [ Number(itemQuantity) - Number(qty) , itemId], function (tx, res) {
+                            console.log(res);
+                            alert('Item Updated with transaction');
                         })
 
+
+
+                    }else {
+                        alert("You don't have that quantity");
+                    }
+
+                } else if (type == 0) {
+
+
+                    var insertSql = 'INSERT INTO Invoice (Id , TransactionDate , CustomerName , Type , ItemName , Quantity) VALUES (? , ? , ? , ? , ? , ?)';
+                    tx.executeSql(insertSql,
+                        [localStorage.lastInvoice, fullDate, cstName, type, itemName, qty],
+                        function (tx, res) {
+                            console.log(res);
+                            alert('Transaction Added');
+                        });
+
+                    tx.executeSql('UPDATE Items SET Quantity = ? WHERE Id = ?', [ Number(qty) + Number(itemQuantity) , itemId], function (tx, res) {
+                        console.log(res);
+                        alert('Item Updated with transaction');
                     })
+
+                } else {
 
                 }
 
-            })
-
-        })
+            });
+        });
 
 
     });
@@ -272,16 +317,16 @@ $(function () {
         if (newPsw == conNewPsw) {
 
             db.transaction(function (tx) {
-                tx.executeSql('SELECT Password FROM Users WHERE Id =? ' , [sessionStorage.userId], function (tx, res) {
+                tx.executeSql('SELECT Password FROM Users WHERE Id =? ', [sessionStorage.userId], function (tx, res) {
                     //console.log(res);
                     if (res.rows[0]["Password"] == oldPsw) {
 
                         var updateSql = 'Update Users SET Password = ? WHERE Id = ?';
 
-                        tx.executeSql(updateSql , [newPsw , current] , function (tx , res) {
+                        tx.executeSql(updateSql, [newPsw, current], function (tx, res) {
                             alert("done");
                             console.log(res);
-                        } );
+                        });
 
                     } else {
                         alert("wrong data");
@@ -297,3 +342,8 @@ $(function () {
 
 
 });
+
+
+
+
+

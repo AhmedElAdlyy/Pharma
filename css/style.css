@@ -15,7 +15,7 @@ body{
 	background-color: #664C43 !important;
 }
 
-#menuOfDropDown{
+.menuOfDropDown{
 	background-color: #664C43;
 	border-radius: 17px;
 	border: 1px solid #00FFCD;
