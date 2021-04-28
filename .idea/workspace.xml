@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bc41237-d8a8-42af-be79-99561e9207e3" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/Buy.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/main.js" afterPath="$PROJECT_DIR$/JS/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Templates/header.html" afterPath="$PROJECT_DIR$/Templates/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/Index.html" afterPath="$PROJECT_DIR$/docs/Index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/Items.html" afterPath="$PROJECT_DIR$/docs/Items.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/Transaction.html" afterPath="$PROJECT_DIR$/docs/Transaction.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/add_users.html" afterPath="$PROJECT_DIR$/docs/add_users.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/after_login.html" afterPath="$PROJECT_DIR$/docs/after_login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/change_password.html" afterPath="$PROJECT_DIR$/docs/change_password.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,56 +33,28 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JS/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="267" column="36" lean-forward="true" selection-start-line="267" selection-start-column="36" selection-end-line="267" selection-end-column="36" />
+            <state relative-caret-position="312">
+              <caret line="86" column="0" lean-forward="true" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
               <folding>
-                <element signature="e#5399#5670#0" expanded="false" />
-                <element signature="e#5793#6389#0" expanded="false" />
-                <marker date="1619590588903" expanded="true" signature="147:223" ph="CREATE TABLE... Users" />
-                <marker date="1619590588903" expanded="true" signature="250:322" ph="CREATE TABLE... Items" />
-                <marker date="1619590588903" expanded="true" signature="349:457" ph="CREATE TABLE... Invoice" />
-                <marker date="1619590588903" expanded="true" signature="486:577" ph="INSERT INTO USERS... " />
-                <marker date="1619590588903" expanded="true" signature="649:686" ph="SELECT COUNT... Users" />
-                <marker date="1619590588903" expanded="true" signature="941:980" ph="SELECT count... Items" />
-                <marker date="1619590588903" expanded="true" signature="1153:1169" ph="SELECT COUNT... " />
-                <marker date="1619590588903" expanded="true" signature="1153:1172" ph="SELECT COUNT... " />
-                <marker date="1619590588903" expanded="true" signature="1153:1197" ph="SELECT COUNT... Invoice" />
-                <marker date="1619590588903" expanded="true" signature="1422:1514" ph="SELECT Usern... Users" />
-                <marker date="1619590588903" expanded="true" signature="1422:1515" ph="SELECT Usern... Users" />
-                <marker date="1619590588903" expanded="true" signature="1853:1891" ph="SELECT IsAdm... Users" />
-                <marker date="1619590588903" expanded="true" signature="2279:2298" ph="SELECT * FRO... Items" />
-                <marker date="1619590588903" expanded="true" signature="3058:3114" ph="SELECT Id FR... Users" />
-                <marker date="1619590588903" expanded="true" signature="7373:7404" ph="SELECT Name Items" />
-                <marker date="1619590588903" expanded="true" signature="7373:7405" ph="SELECT Name Items" />
-                <marker date="1619590588903" expanded="true" signature="7373:10750" ph="SELECT Name Items" />
-                <marker date="1619590588903" expanded="true" signature="8445:8487" ph="UPDATE Items... " />
-                <marker date="1619590588903" expanded="true" signature="9364:9382" ph="UPDATE Items... " />
-                <marker date="1619590588903" expanded="true" signature="9364:9406" ph="UPDATE Items... " />
-                <marker date="1619590588903" expanded="true" signature="10022:10059" ph="SELECT Passw... Users" />
-                <marker date="1619590588903" expanded="true" signature="10022:10060" ph="SELECT Passw... Users" />
+                <marker date="1619592236988" expanded="true" signature="147:223" ph="CREATE TABLE... Users" />
+                <marker date="1619592236988" expanded="true" signature="250:322" ph="CREATE TABLE... Items" />
+                <marker date="1619592236988" expanded="true" signature="349:457" ph="CREATE TABLE... Invoice" />
+                <marker date="1619592236988" expanded="true" signature="486:577" ph="INSERT INTO USERS... " />
+                <marker date="1619592236988" expanded="true" signature="649:686" ph="SELECT COUNT... Users" />
+                <marker date="1619592236988" expanded="true" signature="941:980" ph="SELECT count... Items" />
+                <marker date="1619592236988" expanded="true" signature="1153:1169" ph="SELECT COUNT... " />
+                <marker date="1619592236988" expanded="true" signature="1153:1172" ph="SELECT COUNT... " />
+                <marker date="1619592236988" expanded="true" signature="1153:1197" ph="SELECT COUNT... Invoice" />
+                <marker date="1619592236988" expanded="true" signature="1422:1514" ph="SELECT Usern... Users" />
+                <marker date="1619592236988" expanded="true" signature="1422:1515" ph="SELECT Usern... Users" />
+                <marker date="1619592236988" expanded="true" signature="1853:1891" ph="SELECT IsAdm... Users" />
+                <marker date="1619592236988" expanded="true" signature="2279:2298" ph="SELECT * FRO... Items" />
+                <marker date="1619592236988" expanded="true" signature="3621:3659" ph="SELECT Passw... Users" />
+                <marker date="1619592236988" expanded="true" signature="4430:4486" ph="SELECT Id FR... Users" />
+                <marker date="1619592236988" expanded="true" signature="6179:6211" ph="SELECT * FRO... Items" />
+                <marker date="1619592236988" expanded="true" signature="7181:7223" ph="UPDATE Items... " />
+                <marker date="1619592236988" expanded="true" signature="8038:8080" ph="UPDATE Items... " />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Transaction.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docs/Transaction.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="67" column="83" lean-forward="false" selection-start-line="67" selection-start-column="83" selection-end-line="67" selection-end-column="83" />
-              <folding>
-                <element signature="e#476#2155#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docs/Index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -103,6 +82,8 @@
       <find>upda</find>
       <find>consol</find>
       <find>sellItem</find>
+      <find>loginBtn</find>
+      <find>addUser</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -117,15 +98,15 @@
         <option value="$PROJECT_DIR$/JS/ahmed.js" />
         <option value="$PROJECT_DIR$/JS/takingPicture.js" />
         <option value="$PROJECT_DIR$/Templates/footer.html" />
-        <option value="$PROJECT_DIR$/docs/after_login.html" />
         <option value="$PROJECT_DIR$/docs/Buy.html" />
-        <option value="$PROJECT_DIR$/docs/add_users.html" />
-        <option value="$PROJECT_DIR$/docs/change_password.html" />
-        <option value="$PROJECT_DIR$/docs/Index.html" />
         <option value="$PROJECT_DIR$/docs/Sell.html" />
         <option value="$PROJECT_DIR$/css/style.css" />
-        <option value="$PROJECT_DIR$/docs/Items.html" />
+        <option value="$PROJECT_DIR$/docs/change_password.html" />
+        <option value="$PROJECT_DIR$/docs/Index.html" />
+        <option value="$PROJECT_DIR$/docs/add_users.html" />
         <option value="$PROJECT_DIR$/Templates/header.html" />
+        <option value="$PROJECT_DIR$/docs/after_login.html" />
+        <option value="$PROJECT_DIR$/docs/Items.html" />
         <option value="$PROJECT_DIR$/docs/Transaction.html" />
         <option value="$PROJECT_DIR$/JS/main.js" />
       </list>
@@ -366,12 +347,12 @@
       <workItem from="1619425347262" duration="9649000" />
       <workItem from="1619533036746" duration="7299000" />
       <workItem from="1619575483879" duration="5016000" />
-      <workItem from="1619586242872" duration="4644000" />
+      <workItem from="1619586242872" duration="5935000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75340000" />
+    <option name="totallyTimeSpent" value="76631000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -415,30 +396,24 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#5399#5670#0" expanded="false" />
-            <element signature="e#5793#6389#0" expanded="false" />
-            <marker date="1619590588903" expanded="true" signature="147:223" ph="CREATE TABLE... Users" />
-            <marker date="1619590588903" expanded="true" signature="250:322" ph="CREATE TABLE... Items" />
-            <marker date="1619590588903" expanded="true" signature="349:457" ph="CREATE TABLE... Invoice" />
-            <marker date="1619590588903" expanded="true" signature="486:577" ph="INSERT INTO USERS... " />
-            <marker date="1619590588903" expanded="true" signature="649:686" ph="SELECT COUNT... Users" />
-            <marker date="1619590588903" expanded="true" signature="941:980" ph="SELECT count... Items" />
-            <marker date="1619590588903" expanded="true" signature="1153:1169" ph="SELECT COUNT... " />
-            <marker date="1619590588903" expanded="true" signature="1153:1172" ph="SELECT COUNT... " />
-            <marker date="1619590588903" expanded="true" signature="1153:1197" ph="SELECT COUNT... Invoice" />
-            <marker date="1619590588903" expanded="true" signature="1422:1514" ph="SELECT Usern... Users" />
-            <marker date="1619590588903" expanded="true" signature="1422:1515" ph="SELECT Usern... Users" />
-            <marker date="1619590588903" expanded="true" signature="1853:1891" ph="SELECT IsAdm... Users" />
-            <marker date="1619590588903" expanded="true" signature="2279:2298" ph="SELECT * FRO... Items" />
-            <marker date="1619590588903" expanded="true" signature="3058:3114" ph="SELECT Id FR... Users" />
-            <marker date="1619590588903" expanded="true" signature="7373:7404" ph="SELECT Name Items" />
-            <marker date="1619590588903" expanded="true" signature="7373:7405" ph="SELECT Name Items" />
-            <marker date="1619590588903" expanded="true" signature="7373:10750" ph="SELECT Name Items" />
-            <marker date="1619590588903" expanded="true" signature="8445:8487" ph="UPDATE Items... " />
-            <marker date="1619590588903" expanded="true" signature="9364:9382" ph="UPDATE Items... " />
-            <marker date="1619590588903" expanded="true" signature="9364:9406" ph="UPDATE Items... " />
-            <marker date="1619590588903" expanded="true" signature="10022:10059" ph="SELECT Passw... Users" />
-            <marker date="1619590588903" expanded="true" signature="10022:10060" ph="SELECT Passw... Users" />
+            <marker date="1619592236988" expanded="true" signature="147:223" ph="CREATE TABLE... Users" />
+            <marker date="1619592236988" expanded="true" signature="250:322" ph="CREATE TABLE... Items" />
+            <marker date="1619592236988" expanded="true" signature="349:457" ph="CREATE TABLE... Invoice" />
+            <marker date="1619592236988" expanded="true" signature="486:577" ph="INSERT INTO USERS... " />
+            <marker date="1619592236988" expanded="true" signature="649:686" ph="SELECT COUNT... Users" />
+            <marker date="1619592236988" expanded="true" signature="941:980" ph="SELECT count... Items" />
+            <marker date="1619592236988" expanded="true" signature="1153:1169" ph="SELECT COUNT... " />
+            <marker date="1619592236988" expanded="true" signature="1153:1172" ph="SELECT COUNT... " />
+            <marker date="1619592236988" expanded="true" signature="1153:1197" ph="SELECT COUNT... Invoice" />
+            <marker date="1619592236988" expanded="true" signature="1422:1514" ph="SELECT Usern... Users" />
+            <marker date="1619592236988" expanded="true" signature="1422:1515" ph="SELECT Usern... Users" />
+            <marker date="1619592236988" expanded="true" signature="1853:1891" ph="SELECT IsAdm... Users" />
+            <marker date="1619592236988" expanded="true" signature="2279:2298" ph="SELECT * FRO... Items" />
+            <marker date="1619592236988" expanded="true" signature="3621:3659" ph="SELECT Passw... Users" />
+            <marker date="1619592236988" expanded="true" signature="4430:4486" ph="SELECT Id FR... Users" />
+            <marker date="1619592236988" expanded="true" signature="6179:6211" ph="SELECT * FRO... Items" />
+            <marker date="1619592236988" expanded="true" signature="7181:7223" ph="UPDATE Items... " />
+            <marker date="1619592236988" expanded="true" signature="8038:8080" ph="UPDATE Items... " />
           </folding>
         </state>
       </provider>
@@ -466,30 +441,24 @@
         <state relative-caret-position="6100">
           <caret line="244" column="0" lean-forward="false" selection-start-line="244" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
           <folding>
-            <element signature="e#5399#5670#0" expanded="false" />
-            <element signature="e#5793#6389#0" expanded="false" />
-            <marker date="1619590588903" expanded="true" signature="147:223" ph="CREATE TABLE... Users" />
-            <marker date="1619590588903" expanded="true" signature="250:322" ph="CREATE TABLE... Items" />
-            <marker date="1619590588903" expanded="true" signature="349:457" ph="CREATE TABLE... Invoice" />
-            <marker date="1619590588903" expanded="true" signature="486:577" ph="INSERT INTO USERS... " />
-            <marker date="1619590588903" expanded="true" signature="649:686" ph="SELECT COUNT... Users" />
-            <marker date="1619590588903" expanded="true" signature="941:980" ph="SELECT count... Items" />
-            <marker date="1619590588903" expanded="true" signature="1153:1169" ph="SELECT COUNT... " />
-            <marker date="1619590588903" expanded="true" signature="1153:1172" ph="SELECT COUNT... " />
-            <marker date="1619590588903" expanded="true" signature="1153:1197" ph="SELECT COUNT... Invoice" />
-            <marker date="1619590588903" expanded="true" signature="1422:1514" ph="SELECT Usern... Users" />
-            <marker date="1619590588903" expanded="true" signature="1422:1515" ph="SELECT Usern... Users" />
-            <marker date="1619590588903" expanded="true" signature="1853:1891" ph="SELECT IsAdm... Users" />
-            <marker date="1619590588903" expanded="true" signature="2279:2298" ph="SELECT * FRO... Items" />
-            <marker date="1619590588903" expanded="true" signature="3058:3114" ph="SELECT Id FR... Users" />
-            <marker date="1619590588903" expanded="true" signature="7373:7404" ph="SELECT Name Items" />
-            <marker date="1619590588903" expanded="true" signature="7373:7405" ph="SELECT Name Items" />
-            <marker date="1619590588903" expanded="true" signature="7373:10750" ph="SELECT Name Items" />
-            <marker date="1619590588903" expanded="true" signature="8445:8487" ph="UPDATE Items... " />
-            <marker date="1619590588903" expanded="true" signature="9364:9382" ph="UPDATE Items... " />
-            <marker date="1619590588903" expanded="true" signature="9364:9406" ph="UPDATE Items... " />
-            <marker date="1619590588903" expanded="true" signature="10022:10059" ph="SELECT Passw... Users" />
-            <marker date="1619590588903" expanded="true" signature="10022:10060" ph="SELECT Passw... Users" />
+            <marker date="1619592236988" expanded="true" signature="147:223" ph="CREATE TABLE... Users" />
+            <marker date="1619592236988" expanded="true" signature="250:322" ph="CREATE TABLE... Items" />
+            <marker date="1619592236988" expanded="true" signature="349:457" ph="CREATE TABLE... Invoice" />
+            <marker date="1619592236988" expanded="true" signature="486:577" ph="INSERT INTO USERS... " />
+            <marker date="1619592236988" expanded="true" signature="649:686" ph="SELECT COUNT... Users" />
+            <marker date="1619592236988" expanded="true" signature="941:980" ph="SELECT count... Items" />
+            <marker date="1619592236988" expanded="true" signature="1153:1169" ph="SELECT COUNT... " />
+            <marker date="1619592236988" expanded="true" signature="1153:1172" ph="SELECT COUNT... " />
+            <marker date="1619592236988" expanded="true" signature="1153:1197" ph="SELECT COUNT... Invoice" />
+            <marker date="1619592236988" expanded="true" signature="1422:1514" ph="SELECT Usern... Users" />
+            <marker date="1619592236988" expanded="true" signature="1422:1515" ph="SELECT Usern... Users" />
+            <marker date="1619592236988" expanded="true" signature="1853:1891" ph="SELECT IsAdm... Users" />
+            <marker date="1619592236988" expanded="true" signature="2279:2298" ph="SELECT * FRO... Items" />
+            <marker date="1619592236988" expanded="true" signature="3621:3659" ph="SELECT Passw... Users" />
+            <marker date="1619592236988" expanded="true" signature="4430:4486" ph="SELECT Id FR... Users" />
+            <marker date="1619592236988" expanded="true" signature="6179:6211" ph="SELECT * FRO... Items" />
+            <marker date="1619592236988" expanded="true" signature="7181:7223" ph="UPDATE Items... " />
+            <marker date="1619592236988" expanded="true" signature="8038:8080" ph="UPDATE Items... " />
           </folding>
         </state>
       </provider>
@@ -509,30 +478,24 @@
         <state relative-caret-position="1750">
           <caret line="70" column="68" lean-forward="false" selection-start-line="70" selection-start-column="68" selection-end-line="70" selection-end-column="68" />
           <folding>
-            <element signature="e#5399#5670#0" expanded="false" />
-            <element signature="e#5793#6389#0" expanded="false" />
-            <marker date="1619590588903" expanded="true" signature="147:223" ph="CREATE TABLE... Users" />
-            <marker date="1619590588903" expanded="true" signature="250:322" ph="CREATE TABLE... Items" />
-            <marker date="1619590588903" expanded="true" signature="349:457" ph="CREATE TABLE... Invoice" />
-            <marker date="1619590588903" expanded="true" signature="486:577" ph="INSERT INTO USERS... " />
-            <marker date="1619590588903" expanded="true" signature="649:686" ph="SELECT COUNT... Users" />
-            <marker date="1619590588903" expanded="true" signature="941:980" ph="SELECT count... Items" />
-            <marker date="1619590588903" expanded="true" signature="1153:1169" ph="SELECT COUNT... " />
-            <marker date="1619590588903" expanded="true" signature="1153:1172" ph="SELECT COUNT... " />
-            <marker date="1619590588903" expanded="true" signature="1153:1197" ph="SELECT COUNT... Invoice" />
-            <marker date="1619590588903" expanded="true" signature="1422:1514" ph="SELECT Usern... Users" />
-            <marker date="1619590588903" expanded="true" signature="1422:1515" ph="SELECT Usern... Users" />
-            <marker date="1619590588903" expanded="true" signature="1853:1891" ph="SELECT IsAdm... Users" />
-            <marker date="1619590588903" expanded="true" signature="2279:2298" ph="SELECT * FRO... Items" />
-            <marker date="1619590588903" expanded="true" signature="3058:3114" ph="SELECT Id FR... Users" />
-            <marker date="1619590588903" expanded="true" signature="7373:7404" ph="SELECT Name Items" />
-            <marker date="1619590588903" expanded="true" signature="7373:7405" ph="SELECT Name Items" />
-            <marker date="1619590588903" expanded="true" signature="7373:10750" ph="SELECT Name Items" />
-            <marker date="1619590588903" expanded="true" signature="8445:8487" ph="UPDATE Items... " />
-            <marker date="1619590588903" expanded="true" signature="9364:9382" ph="UPDATE Items... " />
-            <marker date="1619590588903" expanded="true" signature="9364:9406" ph="UPDATE Items... " />
-            <marker date="1619590588903" expanded="true" signature="10022:10059" ph="SELECT Passw... Users" />
-            <marker date="1619590588903" expanded="true" signature="10022:10060" ph="SELECT Passw... Users" />
+            <marker date="1619592236988" expanded="true" signature="147:223" ph="CREATE TABLE... Users" />
+            <marker date="1619592236988" expanded="true" signature="250:322" ph="CREATE TABLE... Items" />
+            <marker date="1619592236988" expanded="true" signature="349:457" ph="CREATE TABLE... Invoice" />
+            <marker date="1619592236988" expanded="true" signature="486:577" ph="INSERT INTO USERS... " />
+            <marker date="1619592236988" expanded="true" signature="649:686" ph="SELECT COUNT... Users" />
+            <marker date="1619592236988" expanded="true" signature="941:980" ph="SELECT count... Items" />
+            <marker date="1619592236988" expanded="true" signature="1153:1169" ph="SELECT COUNT... " />
+            <marker date="1619592236988" expanded="true" signature="1153:1172" ph="SELECT COUNT... " />
+            <marker date="1619592236988" expanded="true" signature="1153:1197" ph="SELECT COUNT... Invoice" />
+            <marker date="1619592236988" expanded="true" signature="1422:1514" ph="SELECT Usern... Users" />
+            <marker date="1619592236988" expanded="true" signature="1422:1515" ph="SELECT Usern... Users" />
+            <marker date="1619592236988" expanded="true" signature="1853:1891" ph="SELECT IsAdm... Users" />
+            <marker date="1619592236988" expanded="true" signature="2279:2298" ph="SELECT * FRO... Items" />
+            <marker date="1619592236988" expanded="true" signature="3621:3659" ph="SELECT Passw... Users" />
+            <marker date="1619592236988" expanded="true" signature="4430:4486" ph="SELECT Id FR... Users" />
+            <marker date="1619592236988" expanded="true" signature="6179:6211" ph="SELECT * FRO... Items" />
+            <marker date="1619592236988" expanded="true" signature="7181:7223" ph="UPDATE Items... " />
+            <marker date="1619592236988" expanded="true" signature="8038:8080" ph="UPDATE Items... " />
           </folding>
         </state>
       </provider>
@@ -559,30 +522,24 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#5399#5670#0" expanded="false" />
-            <element signature="e#5793#6389#0" expanded="false" />
-            <marker date="1619590588903" expanded="true" signature="147:223" ph="CREATE TABLE... Users" />
-            <marker date="1619590588903" expanded="true" signature="250:322" ph="CREATE TABLE... Items" />
-            <marker date="1619590588903" expanded="true" signature="349:457" ph="CREATE TABLE... Invoice" />
-            <marker date="1619590588903" expanded="true" signature="486:577" ph="INSERT INTO USERS... " />
-            <marker date="1619590588903" expanded="true" signature="649:686" ph="SELECT COUNT... Users" />
-            <marker date="1619590588903" expanded="true" signature="941:980" ph="SELECT count... Items" />
-            <marker date="1619590588903" expanded="true" signature="1153:1169" ph="SELECT COUNT... " />
-            <marker date="1619590588903" expanded="true" signature="1153:1172" ph="SELECT COUNT... " />
-            <marker date="1619590588903" expanded="true" signature="1153:1197" ph="SELECT COUNT... Invoice" />
-            <marker date="1619590588903" expanded="true" signature="1422:1514" ph="SELECT Usern... Users" />
-            <marker date="1619590588903" expanded="true" signature="1422:1515" ph="SELECT Usern... Users" />
-            <marker date="1619590588903" expanded="true" signature="1853:1891" ph="SELECT IsAdm... Users" />
-            <marker date="1619590588903" expanded="true" signature="2279:2298" ph="SELECT * FRO... Items" />
-            <marker date="1619590588903" expanded="true" signature="3058:3114" ph="SELECT Id FR... Users" />
-            <marker date="1619590588903" expanded="true" signature="7373:7404" ph="SELECT Name Items" />
-            <marker date="1619590588903" expanded="true" signature="7373:7405" ph="SELECT Name Items" />
-            <marker date="1619590588903" expanded="true" signature="7373:10750" ph="SELECT Name Items" />
-            <marker date="1619590588903" expanded="true" signature="8445:8487" ph="UPDATE Items... " />
-            <marker date="1619590588903" expanded="true" signature="9364:9382" ph="UPDATE Items... " />
-            <marker date="1619590588903" expanded="true" signature="9364:9406" ph="UPDATE Items... " />
-            <marker date="1619590588903" expanded="true" signature="10022:10059" ph="SELECT Passw... Users" />
-            <marker date="1619590588903" expanded="true" signature="10022:10060" ph="SELECT Passw... Users" />
+            <marker date="1619592236988" expanded="true" signature="147:223" ph="CREATE TABLE... Users" />
+            <marker date="1619592236988" expanded="true" signature="250:322" ph="CREATE TABLE... Items" />
+            <marker date="1619592236988" expanded="true" signature="349:457" ph="CREATE TABLE... Invoice" />
+            <marker date="1619592236988" expanded="true" signature="486:577" ph="INSERT INTO USERS... " />
+            <marker date="1619592236988" expanded="true" signature="649:686" ph="SELECT COUNT... Users" />
+            <marker date="1619592236988" expanded="true" signature="941:980" ph="SELECT count... Items" />
+            <marker date="1619592236988" expanded="true" signature="1153:1169" ph="SELECT COUNT... " />
+            <marker date="1619592236988" expanded="true" signature="1153:1172" ph="SELECT COUNT... " />
+            <marker date="1619592236988" expanded="true" signature="1153:1197" ph="SELECT COUNT... Invoice" />
+            <marker date="1619592236988" expanded="true" signature="1422:1514" ph="SELECT Usern... Users" />
+            <marker date="1619592236988" expanded="true" signature="1422:1515" ph="SELECT Usern... Users" />
+            <marker date="1619592236988" expanded="true" signature="1853:1891" ph="SELECT IsAdm... Users" />
+            <marker date="1619592236988" expanded="true" signature="2279:2298" ph="SELECT * FRO... Items" />
+            <marker date="1619592236988" expanded="true" signature="3621:3659" ph="SELECT Passw... Users" />
+            <marker date="1619592236988" expanded="true" signature="4430:4486" ph="SELECT Id FR... Users" />
+            <marker date="1619592236988" expanded="true" signature="6179:6211" ph="SELECT * FRO... Items" />
+            <marker date="1619592236988" expanded="true" signature="7181:7223" ph="UPDATE Items... " />
+            <marker date="1619592236988" expanded="true" signature="8038:8080" ph="UPDATE Items... " />
           </folding>
         </state>
       </provider>
@@ -617,30 +574,24 @@
         <state relative-caret-position="2225">
           <caret line="89" column="0" lean-forward="true" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
           <folding>
-            <element signature="e#5399#5670#0" expanded="false" />
-            <element signature="e#5793#6389#0" expanded="false" />
-            <marker date="1619590588903" expanded="true" signature="147:223" ph="CREATE TABLE... Users" />
-            <marker date="1619590588903" expanded="true" signature="250:322" ph="CREATE TABLE... Items" />
-            <marker date="1619590588903" expanded="true" signature="349:457" ph="CREATE TABLE... Invoice" />
-            <marker date="1619590588903" expanded="true" signature="486:577" ph="INSERT INTO USERS... " />
-            <marker date="1619590588903" expanded="true" signature="649:686" ph="SELECT COUNT... Users" />
-            <marker date="1619590588903" expanded="true" signature="941:980" ph="SELECT count... Items" />
-            <marker date="1619590588903" expanded="true" signature="1153:1169" ph="SELECT COUNT... " />
-            <marker date="1619590588903" expanded="true" signature="1153:1172" ph="SELECT COUNT... " />
-            <marker date="1619590588903" expanded="true" signature="1153:1197" ph="SELECT COUNT... Invoice" />
-            <marker date="1619590588903" expanded="true" signature="1422:1514" ph="SELECT Usern... Users" />
-            <marker date="1619590588903" expanded="true" signature="1422:1515" ph="SELECT Usern... Users" />
-            <marker date="1619590588903" expanded="true" signature="1853:1891" ph="SELECT IsAdm... Users" />
-            <marker date="1619590588903" expanded="true" signature="2279:2298" ph="SELECT * FRO... Items" />
-            <marker date="1619590588903" expanded="true" signature="3058:3114" ph="SELECT Id FR... Users" />
-            <marker date="1619590588903" expanded="true" signature="7373:7404" ph="SELECT Name Items" />
-            <marker date="1619590588903" expanded="true" signature="7373:7405" ph="SELECT Name Items" />
-            <marker date="1619590588903" expanded="true" signature="7373:10750" ph="SELECT Name Items" />
-            <marker date="1619590588903" expanded="true" signature="8445:8487" ph="UPDATE Items... " />
-            <marker date="1619590588903" expanded="true" signature="9364:9382" ph="UPDATE Items... " />
-            <marker date="1619590588903" expanded="true" signature="9364:9406" ph="UPDATE Items... " />
-            <marker date="1619590588903" expanded="true" signature="10022:10059" ph="SELECT Passw... Users" />
-            <marker date="1619590588903" expanded="true" signature="10022:10060" ph="SELECT Passw... Users" />
+            <marker date="1619592236988" expanded="true" signature="147:223" ph="CREATE TABLE... Users" />
+            <marker date="1619592236988" expanded="true" signature="250:322" ph="CREATE TABLE... Items" />
+            <marker date="1619592236988" expanded="true" signature="349:457" ph="CREATE TABLE... Invoice" />
+            <marker date="1619592236988" expanded="true" signature="486:577" ph="INSERT INTO USERS... " />
+            <marker date="1619592236988" expanded="true" signature="649:686" ph="SELECT COUNT... Users" />
+            <marker date="1619592236988" expanded="true" signature="941:980" ph="SELECT count... Items" />
+            <marker date="1619592236988" expanded="true" signature="1153:1169" ph="SELECT COUNT... " />
+            <marker date="1619592236988" expanded="true" signature="1153:1172" ph="SELECT COUNT... " />
+            <marker date="1619592236988" expanded="true" signature="1153:1197" ph="SELECT COUNT... Invoice" />
+            <marker date="1619592236988" expanded="true" signature="1422:1514" ph="SELECT Usern... Users" />
+            <marker date="1619592236988" expanded="true" signature="1422:1515" ph="SELECT Usern... Users" />
+            <marker date="1619592236988" expanded="true" signature="1853:1891" ph="SELECT IsAdm... Users" />
+            <marker date="1619592236988" expanded="true" signature="2279:2298" ph="SELECT * FRO... Items" />
+            <marker date="1619592236988" expanded="true" signature="3621:3659" ph="SELECT Passw... Users" />
+            <marker date="1619592236988" expanded="true" signature="4430:4486" ph="SELECT Id FR... Users" />
+            <marker date="1619592236988" expanded="true" signature="6179:6211" ph="SELECT * FRO... Items" />
+            <marker date="1619592236988" expanded="true" signature="7181:7223" ph="UPDATE Items... " />
+            <marker date="1619592236988" expanded="true" signature="8038:8080" ph="UPDATE Items... " />
           </folding>
         </state>
       </provider>
@@ -658,30 +609,24 @@
         <state relative-caret-position="175">
           <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
           <folding>
-            <element signature="e#5399#5670#0" expanded="false" />
-            <element signature="e#5793#6389#0" expanded="false" />
-            <marker date="1619590588903" expanded="true" signature="147:223" ph="CREATE TABLE... Users" />
-            <marker date="1619590588903" expanded="true" signature="250:322" ph="CREATE TABLE... Items" />
-            <marker date="1619590588903" expanded="true" signature="349:457" ph="CREATE TABLE... Invoice" />
-            <marker date="1619590588903" expanded="true" signature="486:577" ph="INSERT INTO USERS... " />
-            <marker date="1619590588903" expanded="true" signature="649:686" ph="SELECT COUNT... Users" />
-            <marker date="1619590588903" expanded="true" signature="941:980" ph="SELECT count... Items" />
-            <marker date="1619590588903" expanded="true" signature="1153:1169" ph="SELECT COUNT... " />
-            <marker date="1619590588903" expanded="true" signature="1153:1172" ph="SELECT COUNT... " />
-            <marker date="1619590588903" expanded="true" signature="1153:1197" ph="SELECT COUNT... Invoice" />
-            <marker date="1619590588903" expanded="true" signature="1422:1514" ph="SELECT Usern... Users" />
-            <marker date="1619590588903" expanded="true" signature="1422:1515" ph="SELECT Usern... Users" />
-            <marker date="1619590588903" expanded="true" signature="1853:1891" ph="SELECT IsAdm... Users" />
-            <marker date="1619590588903" expanded="true" signature="2279:2298" ph="SELECT * FRO... Items" />
-            <marker date="1619590588903" expanded="true" signature="3058:3114" ph="SELECT Id FR... Users" />
-            <marker date="1619590588903" expanded="true" signature="7373:7404" ph="SELECT Name Items" />
-            <marker date="1619590588903" expanded="true" signature="7373:7405" ph="SELECT Name Items" />
-            <marker date="1619590588903" expanded="true" signature="7373:10750" ph="SELECT Name Items" />
-            <marker date="1619590588903" expanded="true" signature="8445:8487" ph="UPDATE Items... " />
-            <marker date="1619590588903" expanded="true" signature="9364:9382" ph="UPDATE Items... " />
-            <marker date="1619590588903" expanded="true" signature="9364:9406" ph="UPDATE Items... " />
-            <marker date="1619590588903" expanded="true" signature="10022:10059" ph="SELECT Passw... Users" />
-            <marker date="1619590588903" expanded="true" signature="10022:10060" ph="SELECT Passw... Users" />
+            <marker date="1619592236988" expanded="true" signature="147:223" ph="CREATE TABLE... Users" />
+            <marker date="1619592236988" expanded="true" signature="250:322" ph="CREATE TABLE... Items" />
+            <marker date="1619592236988" expanded="true" signature="349:457" ph="CREATE TABLE... Invoice" />
+            <marker date="1619592236988" expanded="true" signature="486:577" ph="INSERT INTO USERS... " />
+            <marker date="1619592236988" expanded="true" signature="649:686" ph="SELECT COUNT... Users" />
+            <marker date="1619592236988" expanded="true" signature="941:980" ph="SELECT count... Items" />
+            <marker date="1619592236988" expanded="true" signature="1153:1169" ph="SELECT COUNT... " />
+            <marker date="1619592236988" expanded="true" signature="1153:1172" ph="SELECT COUNT... " />
+            <marker date="1619592236988" expanded="true" signature="1153:1197" ph="SELECT COUNT... Invoice" />
+            <marker date="1619592236988" expanded="true" signature="1422:1514" ph="SELECT Usern... Users" />
+            <marker date="1619592236988" expanded="true" signature="1422:1515" ph="SELECT Usern... Users" />
+            <marker date="1619592236988" expanded="true" signature="1853:1891" ph="SELECT IsAdm... Users" />
+            <marker date="1619592236988" expanded="true" signature="2279:2298" ph="SELECT * FRO... Items" />
+            <marker date="1619592236988" expanded="true" signature="3621:3659" ph="SELECT Passw... Users" />
+            <marker date="1619592236988" expanded="true" signature="4430:4486" ph="SELECT Id FR... Users" />
+            <marker date="1619592236988" expanded="true" signature="6179:6211" ph="SELECT * FRO... Items" />
+            <marker date="1619592236988" expanded="true" signature="7181:7223" ph="UPDATE Items... " />
+            <marker date="1619592236988" expanded="true" signature="8038:8080" ph="UPDATE Items... " />
           </folding>
         </state>
       </provider>
@@ -728,38 +673,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/after_login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="61" column="7" lean-forward="false" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/add_users.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="57" column="9" lean-forward="false" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/change_password.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="64" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
           <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/Items.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="27" column="86" lean-forward="false" selection-start-line="27" selection-start-column="79" selection-end-line="27" selection-end-column="86" />
         </state>
       </provider>
     </entry>
@@ -770,25 +687,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Templates/header.html">
+    <entry file="file://$PROJECT_DIR$/docs/change_password.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="14" column="37" lean-forward="true" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+        <state relative-caret-position="475">
+          <caret line="39" column="100" lean-forward="false" selection-start-line="39" selection-start-column="100" selection-end-line="39" selection-end-column="100" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/Index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="400">
+          <caret line="26" column="91" lean-forward="false" selection-start-line="26" selection-start-column="91" selection-end-line="26" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/add_users.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Templates/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="32" column="95" lean-forward="false" selection-start-line="32" selection-start-column="95" selection-end-line="32" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/after_login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1350">
+          <caret line="54" column="21" lean-forward="false" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/Items.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-425">
+          <caret line="28" column="93" lean-forward="false" selection-start-line="28" selection-start-column="93" selection-end-line="28" selection-end-column="93" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/Transaction.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="67" column="83" lean-forward="false" selection-start-line="67" selection-start-column="83" selection-end-line="67" selection-end-column="83" />
+        <state relative-caret-position="132">
+          <caret line="82" column="100" lean-forward="false" selection-start-line="82" selection-start-column="100" selection-end-line="82" selection-end-column="100" />
           <folding>
             <element signature="e#476#2155#0" expanded="false" />
           </folding>
@@ -797,33 +747,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JS/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="267" column="36" lean-forward="true" selection-start-line="267" selection-start-column="36" selection-end-line="267" selection-end-column="36" />
+        <state relative-caret-position="312">
+          <caret line="86" column="0" lean-forward="true" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
           <folding>
-            <element signature="e#5399#5670#0" expanded="false" />
-            <element signature="e#5793#6389#0" expanded="false" />
-            <marker date="1619590588903" expanded="true" signature="147:223" ph="CREATE TABLE... Users" />
-            <marker date="1619590588903" expanded="true" signature="250:322" ph="CREATE TABLE... Items" />
-            <marker date="1619590588903" expanded="true" signature="349:457" ph="CREATE TABLE... Invoice" />
-            <marker date="1619590588903" expanded="true" signature="486:577" ph="INSERT INTO USERS... " />
-            <marker date="1619590588903" expanded="true" signature="649:686" ph="SELECT COUNT... Users" />
-            <marker date="1619590588903" expanded="true" signature="941:980" ph="SELECT count... Items" />
-            <marker date="1619590588903" expanded="true" signature="1153:1169" ph="SELECT COUNT... " />
-            <marker date="1619590588903" expanded="true" signature="1153:1172" ph="SELECT COUNT... " />
-            <marker date="1619590588903" expanded="true" signature="1153:1197" ph="SELECT COUNT... Invoice" />
-            <marker date="1619590588903" expanded="true" signature="1422:1514" ph="SELECT Usern... Users" />
-            <marker date="1619590588903" expanded="true" signature="1422:1515" ph="SELECT Usern... Users" />
-            <marker date="1619590588903" expanded="true" signature="1853:1891" ph="SELECT IsAdm... Users" />
-            <marker date="1619590588903" expanded="true" signature="2279:2298" ph="SELECT * FRO... Items" />
-            <marker date="1619590588903" expanded="true" signature="3058:3114" ph="SELECT Id FR... Users" />
-            <marker date="1619590588903" expanded="true" signature="7373:7404" ph="SELECT Name Items" />
-            <marker date="1619590588903" expanded="true" signature="7373:7405" ph="SELECT Name Items" />
-            <marker date="1619590588903" expanded="true" signature="7373:10750" ph="SELECT Name Items" />
-            <marker date="1619590588903" expanded="true" signature="8445:8487" ph="UPDATE Items... " />
-            <marker date="1619590588903" expanded="true" signature="9364:9382" ph="UPDATE Items... " />
-            <marker date="1619590588903" expanded="true" signature="9364:9406" ph="UPDATE Items... " />
-            <marker date="1619590588903" expanded="true" signature="10022:10059" ph="SELECT Passw... Users" />
-            <marker date="1619590588903" expanded="true" signature="10022:10060" ph="SELECT Passw... Users" />
+            <marker date="1619592236988" expanded="true" signature="147:223" ph="CREATE TABLE... Users" />
+            <marker date="1619592236988" expanded="true" signature="250:322" ph="CREATE TABLE... Items" />
+            <marker date="1619592236988" expanded="true" signature="349:457" ph="CREATE TABLE... Invoice" />
+            <marker date="1619592236988" expanded="true" signature="486:577" ph="INSERT INTO USERS... " />
+            <marker date="1619592236988" expanded="true" signature="649:686" ph="SELECT COUNT... Users" />
+            <marker date="1619592236988" expanded="true" signature="941:980" ph="SELECT count... Items" />
+            <marker date="1619592236988" expanded="true" signature="1153:1169" ph="SELECT COUNT... " />
+            <marker date="1619592236988" expanded="true" signature="1153:1172" ph="SELECT COUNT... " />
+            <marker date="1619592236988" expanded="true" signature="1153:1197" ph="SELECT COUNT... Invoice" />
+            <marker date="1619592236988" expanded="true" signature="1422:1514" ph="SELECT Usern... Users" />
+            <marker date="1619592236988" expanded="true" signature="1422:1515" ph="SELECT Usern... Users" />
+            <marker date="1619592236988" expanded="true" signature="1853:1891" ph="SELECT IsAdm... Users" />
+            <marker date="1619592236988" expanded="true" signature="2279:2298" ph="SELECT * FRO... Items" />
+            <marker date="1619592236988" expanded="true" signature="3621:3659" ph="SELECT Passw... Users" />
+            <marker date="1619592236988" expanded="true" signature="4430:4486" ph="SELECT Id FR... Users" />
+            <marker date="1619592236988" expanded="true" signature="6179:6211" ph="SELECT * FRO... Items" />
+            <marker date="1619592236988" expanded="true" signature="7181:7223" ph="UPDATE Items... " />
+            <marker date="1619592236988" expanded="true" signature="8038:8080" ph="UPDATE Items... " />
           </folding>
         </state>
       </provider>

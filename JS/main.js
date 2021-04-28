@@ -81,84 +81,18 @@ $(function () {
                 }
             });
         });
-
-
     }
 
-//-----------------------------------------------------------------------------------------------------------------
 
-    $('#loginBtn').on("click", function () {
-
-        var username = $('#name').val();
-        var pass = $('#password').val();
-
-
-        db.transaction(function (tx) {
-
-            tx.executeSql('SELECT Id FROM Users WHERE Username = ? AND Password = ?', [username, pass], function (tx, results) {
-
-                var records = results.rows.length;
-
-                if (records > 0) {
-
-                    sessionStorage.userId = results.rows[0]['Id'];
-                    window.location.href = 'after_login.html';
-
-                } else {
-                    alert('not found');
-                }
-
-            })
-
-        })
-
-    });
-
-
-//-----------------------------------------------------------------------------------------------------------------
-
-    $('#logoutBtn').on("click", function () {
-
-        sessionStorage.removeItem('userId');
-        window.location.href = 'index.html';
-
-    });
-
-
-//-----------------------------------------------------------------------------------------------------------------
-
-    $('#takePic').on("click", function () {
-        $('#taking').show();
-    })
-
-
-//-----------------------------------------------------------------------------------------------------------------
-
-
-    $("#addUser").click(function () {
-        localStorage.lastId++;
-
-        var name = $("#name").val();
-        var pass = $("#password").val();
-        db.transaction(function (transcation) {
-            var sql = "INSERT INTO USERS (Id , Username , Password , IsAdmin) VALUES(?,?,?,?)";
-            transcation.executeSql(sql, [localStorage.lastId, name, pass, 0], function () {
-                alert("New user is added");
-                window.location.href = 'after_login.html';
-            }, function (transaction, err) {
-                alert(err.message);
-            })
-        })
-    });
 
 //-----------------------------------------------------------------------------------------------------------------
 
     $("#delete").click(function () {
         var name = $("#name").val();
         var pass = $("#password").val();
-        db.transaction(function (transcation) {
+        db.transaction(function (transaction) {
             var sql = "DELETE FROM USERS WHERE user_name = ? AND password = ?";
-            transcation.executeSql(sql, [name, pass], function () {
+            transaction.executeSql(sql, [name, pass], function () {
                 alert("This user is deleted");
             }, function (transaction, err) {
                 alert(err.message);
@@ -166,122 +100,136 @@ $(function () {
         })
     });
 
-//-----------------------------------------------------------------------------------------------------------------
-
-    /*$("#btn").click(function()
-     {
-     var name = $("#name").val();
-     var pass = $("#password").val();
-     if(name == "esraa" && pass == "aaa")
-     {
-     window.location = "after_login.html";
-     }
-     else
-     {
-     alert("user not found");
-     }
-     });*/
-
-//-----------------------------------------------------------------------------------------------------------------
-
-    /*$("#btn").click(function()
-     {
-     var name = $("#name").val();
-     var pass = $("#password").val();
-
-     db.transaction(function(transcation)
-     {
-     var sql = "SELECT * FROM USERS WHERE user_name = ? AND password = ?";
-     transcation.executeSql(sql, [name, pass], function() {
-     if(name == sql.name && pass == sql.pass)
-     {
-     window.location = "after_login.html";
-     }
-     else
-     {
-     alert("user not found");
-     }
-     //alert("name is " + name + " password is " + pass);
-     }, function(transaction,err) {
-     alert(err.message);
-     })
-     })
-
-     });*/
+});
 
 
-//-----------------------------------------------------------------------------------------------------
+function changePassword() {
 
-    $('#AddItem').on("click", function () {
+    var oldPsw = $('#oldPsw').val();
+    var newPsw = $('#psw').val();
+    var conNewPsw = $('#conPsw').val();
+    var current = sessionStorage.userId;
 
-        var itemName = $('#itemName').val();
-        var imgBase = sessionStorage.imgBase;
+    if (newPsw == conNewPsw) {
 
         db.transaction(function (tx) {
+            tx.executeSql('SELECT Password FROM Users WHERE Id =? ', [sessionStorage.userId], function (tx, res) {
+                //console.log(res);
+                if (res.rows[0]["Password"] == oldPsw) {
 
-            localStorage.lastItem++;
+                    var updateSql = 'Update Users SET Password = ? WHERE Id = ?';
 
-            var sql = 'INSERT INTO Items (Id , Name , Quantity , Picture) VALUES (? , ? , ? , ?)';
-            tx.executeSql(sql, [localStorage.lastItem, itemName, 0, imgBase], function () {
-                alert('Item Added successfully');
+                    tx.executeSql(updateSql, [newPsw, current], function (tx, res) {
+                        alert("done");
+                        console.log(res);
+                    });
+
+                } else {
+                    alert("wrong data");
+                }
             })
+        });
+
+    } else {
+        alert("Password and Confirm Password is not match!!");
+    }
+}
+
+
+function login() {
+
+    var username = $('#name').val();
+    var pass = $('#password').val();
+
+
+    db.transaction(function (tx) {
+
+        tx.executeSql('SELECT Id FROM Users WHERE Username = ? AND Password = ?', [username, pass], function (tx, results) {
+
+            var records = results.rows.length;
+
+            if (records > 0) {
+
+                sessionStorage.userId = results.rows[0]['Id'];
+                window.location.href = 'after_login.html';
+
+            } else {
+                alert('not found');
+            }
+
         })
 
-
-    });
-
-
-//-----------------------------------------------------------------------------------------------------
+    })
+}
 
 
-    $('#confirm').on("click", function () {
+function addUser() {
 
-        var cstName = $('#cstName').val();
-        var itemId = $('#itemName').val();
-        var qty = $('#quantity').val();
-        var type = $('#type').val();
+    localStorage.lastId++;
+
+    var name = $("#name").val();
+    var pass = $("#password").val();
+    db.transaction(function (transcation) {
+        var sql = "INSERT INTO USERS (Id , Username , Password , IsAdmin) VALUES(?,?,?,?)";
+        transcation.executeSql(sql, [localStorage.lastId, name, pass, 0], function () {
+            alert("New user is added");
+            window.location.href = 'after_login.html';
+        }, function (transaction, err) {
+            alert(err.message);
+        })
+    })
+}
+
+function logout() {
+    sessionStorage.removeItem('userId');
+    window.location.href = 'index.html';
+}
+
+function addItem() {
+    var itemName = $('#itemName').val();
+    var imgBase = sessionStorage.imgBase;
+
+    db.transaction(function (tx) {
+
+        localStorage.lastItem++;
+
+        var sql = 'INSERT INTO Items (Id , Name , Quantity , Picture) VALUES (? , ? , ? , ?)';
+        tx.executeSql(sql, [localStorage.lastItem, itemName, 0, imgBase], function () {
+            alert('Item Added successfully');
+        })
+    })
+}
+
+function takePic() {
+    $('#taking').show();
+}
+
+function addTransaction() {
+
+    var cstName = $('#cstName').val();
+    var itemId = $('#itemName').val();
+    var qty = $('#quantity').val();
+    var type = $('#type').val();
 
 
-        db.transaction(function (tx) {
-            tx.executeSql('SELECT * FROM Items WHERE Id = ? ', [itemId], function (tx, res) {
+    db.transaction(function (tx) {
+        tx.executeSql('SELECT * FROM Items WHERE Id = ? ', [itemId], function (tx, res) {
 
-                var itemName = res.rows[0]["Name"];
-                var itemQuantity = res.rows[0]["Quantity"];
-                localStorage.lastInvoice++;
+            var itemName = res.rows[0]["Name"];
+            var itemQuantity = res.rows[0]["Quantity"];
+            localStorage.lastInvoice++;
 
-                var d = new Date();
-                var day = d.getDate();
-                var month = d.getMonth() + 1;
-                var year = d.getFullYear();
+            var d = new Date();
+            var day = d.getDate();
+            var month = d.getMonth() + 1;
+            var year = d.getFullYear();
 
-                var fullDate = `${day} / ${month} / ${year}`;
-
-
-                if (type == 1) {
-
-                    if(itemQuantity >= qty){
-
-                        var insertSql = 'INSERT INTO Invoice (Id , TransactionDate , CustomerName , Type , ItemName , Quantity) VALUES (? , ? , ? , ? , ? , ?)';
-                        tx.executeSql(insertSql,
-                            [localStorage.lastInvoice, fullDate, cstName, type, itemName, qty],
-                            function (tx, res) {
-                                console.log(res);
-                                alert('Transaction Added');
-                            });
-
-                        tx.executeSql('UPDATE Items SET Quantity = ? WHERE Id = ?', [ Number(itemQuantity) - Number(qty) , itemId], function (tx, res) {
-                            console.log(res);
-                            alert('Item Updated with transaction');
-                        })
+            var fullDate = `${day} / ${month} / ${year}`;
 
 
+            if (type == 1) {
 
-                    }else {
-                        alert("You don't have that quantity");
-                    }
-
-                } else if (type == 0) {
-
+                if (itemQuantity >= qty) {
 
                     var insertSql = 'INSERT INTO Invoice (Id , TransactionDate , CustomerName , Type , ItemName , Quantity) VALUES (? , ? , ? , ? , ? , ?)';
                     tx.executeSql(insertSql,
@@ -291,57 +239,41 @@ $(function () {
                             alert('Transaction Added');
                         });
 
-                    tx.executeSql('UPDATE Items SET Quantity = ? WHERE Id = ?', [ Number(qty) + Number(itemQuantity) , itemId], function (tx, res) {
+                    tx.executeSql('UPDATE Items SET Quantity = ? WHERE Id = ?', [Number(itemQuantity) - Number(qty), itemId], function (tx, res) {
                         console.log(res);
                         alert('Item Updated with transaction');
                     })
 
-                } else {
 
+                } else {
+                    alert("You don't have that quantity");
                 }
 
-            });
-        });
+            } else if (type == 0) {
 
 
-    });
+                var insertSql = 'INSERT INTO Invoice (Id , TransactionDate , CustomerName , Type , ItemName , Quantity) VALUES (? , ? , ? , ? , ? , ?)';
+                tx.executeSql(insertSql,
+                    [localStorage.lastInvoice, fullDate, cstName, type, itemName, qty],
+                    function (tx, res) {
+                        console.log(res);
+                        alert('Transaction Added');
+                    });
 
-
-    $('#btnChangePsw').on("click", function () {
-
-        var oldPsw = $('#oldPsw').val();
-        var newPsw = $('#psw').val();
-        var conNewPsw = $('#conPsw').val();
-        var current = sessionStorage.userId;
-
-        if (newPsw == conNewPsw) {
-
-            db.transaction(function (tx) {
-                tx.executeSql('SELECT Password FROM Users WHERE Id =? ', [sessionStorage.userId], function (tx, res) {
-                    //console.log(res);
-                    if (res.rows[0]["Password"] == oldPsw) {
-
-                        var updateSql = 'Update Users SET Password = ? WHERE Id = ?';
-
-                        tx.executeSql(updateSql, [newPsw, current], function (tx, res) {
-                            alert("done");
-                            console.log(res);
-                        });
-
-                    } else {
-                        alert("wrong data");
-                    }
+                tx.executeSql('UPDATE Items SET Quantity = ? WHERE Id = ?', [Number(qty) + Number(itemQuantity), itemId], function (tx, res) {
+                    console.log(res);
+                    alert('Item Updated with transaction');
                 })
-            });
 
-        } else {
-            alert("Password and Confirm Password is not match!!");
-        }
+            } else {
 
+                alert("Wrong Data");
+            }
+
+        });
     });
 
-
-});
+}
 
 
 
