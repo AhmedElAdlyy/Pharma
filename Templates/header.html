@@ -23,13 +23,30 @@
 
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle navBarItem" href="#" id="navbarDropdownMenuLink" role="button"
+                    <a class="nav-link dropdown-toggle navBarItem" href="#" id="navbarDropdownMenuUsers" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Manage Users
+                    </a>
+                    <div class="dropdown-menu menuOfDropDown" aria-labelledby="navbarDropdownMenuUsers">
+                        <a class="dropdown-item navBarItem" href="add_users.html"id="addUserLink">Add User</a>
+                        <a class="dropdown-item navBarItem" href="delete_users.html">Delete User</a>
+
+                    </div>
+                </li>
+
+
+
+
+
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle navBarItem" href="#" id="navbarDropdownMenuControl" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Username
                     </a>
-                    <div class="dropdown-menu menuOfDropDown" aria-labelledby="navbarDropdownMenuLink">
+                    <div class="dropdown-menu menuOfDropDown" aria-labelledby="navbarDropdownMenuControl">
                         <a class="dropdown-item navBarItem" href="change_password.html">Change password</a>
-                        <a class="dropdown-item navBarItem" href="add_users.html"id="addUserLink">Add User</a>
                         <a class="dropdown-item navBarItem" href="Index.html" onclick="logout()" >Log out</a>
                     </div>
                 </li>

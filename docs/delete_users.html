@@ -22,15 +22,11 @@
 
         <form id="loginForm" class="p-4">
             <div class="form-group">
-                <label for="name">Username</label>
-                <input type="text" class="form-control inputField" id="name">
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control inputField" id="password">
+                <label for="usersList">User</label>
+                <select id="usersList" class="form-control inputField"></select>
             </div>
 
-            <button type="button" class="btn btn-dark col-sm-12 submitBtn" onclick="addUser()">Add user</button>
+            <button type="button" class="btn btn-dark col-sm-12 submitBtn" onclick="deleteUser()">Delete user</button>
             
         </form>
 

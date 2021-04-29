@@ -8,14 +8,12 @@ $(function () {
         tx.executeSql('CREATE TABLE IF NOT EXISTS Invoice (Id UNIQUE , TransactionDate , CustomerName , Type , ItemName , Quantity)');
 
 
-        tx.executeSql('INSERT INTO USERS (Id , Username , Password , IsAdmin) VALUES (1 , "Admin" , "123" , TRUE )');
+        tx.executeSql('INSERT INTO USERS (Id , Username , Password , IsAdmin) VALUES ("1" , "Admin" , "123" , TRUE )');
 
     });
 
     db.transaction(function (tx) {
         tx.executeSql('SELECT COUNT(Id) AS lastId FROM Users', [], function (tx, results) {
-            //alert(results.rows[0]['lastId']);
-            //console.log(results);
             localStorage.lastId = results.rows[0]['lastId'];
         })
     });
@@ -43,7 +41,7 @@ $(function () {
 
                 if (results.rows.length > 0) {
                     var user = results.rows[0]['Username'];
-                    $('#navbarDropdownMenuLink').html(user);
+                    $('#navbarDropdownMenuControl').html(user);
                 }
 
             })
@@ -61,14 +59,14 @@ $(function () {
 
                     if (admin != 1) {
 
-                        $('#addUserLink').hide();
+                        $('#navbarDropdownMenuUsers').hide();
                     }
 
                 }
 
             })
 
-        })
+        });
 
         db.transaction(function (tx) {
             tx.executeSql('SELECT * FROM Items', [], function (tx, results) {
@@ -81,24 +79,19 @@ $(function () {
                 }
             });
         });
-    }
 
-
-
-//-----------------------------------------------------------------------------------------------------------------
-
-    $("#delete").click(function () {
-        var name = $("#name").val();
-        var pass = $("#password").val();
-        db.transaction(function (transaction) {
-            var sql = "DELETE FROM USERS WHERE user_name = ? AND password = ?";
-            transaction.executeSql(sql, [name, pass], function () {
-                alert("This user is deleted");
-            }, function (transaction, err) {
-                alert(err.message);
+        db.transaction(function (tx) {
+            tx.executeSql('SELECT * FROM Users' , [] , function (tx , res) {
+                $.each(res.rows , function (key , value) {
+                    if(value['IsAdmin'] != 1){
+                        $('#usersList').append(`<option value="${value['Id']}" > ${value['Username']} </option>`)
+                    }
+                })
             })
         })
-    });
+
+
+    }
 
 });
 
@@ -119,9 +112,9 @@ function changePassword() {
 
                     var updateSql = 'Update Users SET Password = ? WHERE Id = ?';
 
-                    tx.executeSql(updateSql, [newPsw, current], function (tx, res) {
-                        alert("done");
-                        console.log(res);
+                    tx.executeSql(updateSql, [newPsw, current], function () {
+                        alert("your password has been changed successfully");
+                        redirect('after_login.html');
                     });
 
                 } else {
@@ -151,7 +144,7 @@ function login() {
             if (records > 0) {
 
                 sessionStorage.userId = results.rows[0]['Id'];
-                window.location.href = 'after_login.html';
+                redirect('after_login.html')
 
             } else {
                 alert('not found');
@@ -169,11 +162,11 @@ function addUser() {
 
     var name = $("#name").val();
     var pass = $("#password").val();
-    db.transaction(function (transcation) {
+    db.transaction(function (transaction) {
         var sql = "INSERT INTO USERS (Id , Username , Password , IsAdmin) VALUES(?,?,?,?)";
-        transcation.executeSql(sql, [localStorage.lastId, name, pass, 0], function () {
+        transaction.executeSql(sql, [localStorage.lastId, name, pass, 0], function () {
             alert("New user is added");
-            window.location.href = 'after_login.html';
+            redirect('after_login.html');
         }, function (transaction, err) {
             alert(err.message);
         })
@@ -182,7 +175,7 @@ function addUser() {
 
 function logout() {
     sessionStorage.removeItem('userId');
-    window.location.href = 'index.html';
+    redirect('index.html');
 }
 
 function addItem() {
@@ -196,6 +189,7 @@ function addItem() {
         var sql = 'INSERT INTO Items (Id , Name , Quantity , Picture) VALUES (? , ? , ? , ?)';
         tx.executeSql(sql, [localStorage.lastItem, itemName, 0, imgBase], function () {
             alert('Item Added successfully');
+            redirect('Items.html');
         })
     })
 }
@@ -219,13 +213,7 @@ function addTransaction() {
             var itemQuantity = res.rows[0]["Quantity"];
             localStorage.lastInvoice++;
 
-            var d = new Date();
-            var day = d.getDate();
-            var month = d.getMonth() + 1;
-            var year = d.getFullYear();
-
-            var fullDate = `${day} / ${month} / ${year}`;
-
+            var fullDate = getDate();
 
             if (type == 1) {
 
@@ -273,6 +261,34 @@ function addTransaction() {
         });
     });
 
+}
+
+
+function deleteUser() {
+    var userId = $('#usersList').val();
+
+    db.transaction(function (tx) {
+        tx.executeSql('DELETE FROM Users WHERE Id = ? ' , [userId] , function () {
+            alert(`User Is Deleted!`);
+        });
+    });
+
+}
+
+function redirect(location) {
+    window.location.href = location;
+}
+
+function getDate() {
+
+    var d = new Date();
+    var day = d.getDate();
+    var month = d.getMonth() + 1;
+    var year = d.getFullYear();
+
+    var fullDate = `${day} / ${month} / ${year}`;
+
+    return fullDate;
 }
 
 
