@@ -81,9 +81,9 @@ $(function () {
         });
 
         db.transaction(function (tx) {
-            tx.executeSql('SELECT * FROM Users' , [] , function (tx , res) {
-                $.each(res.rows , function (key , value) {
-                    if(value['IsAdmin'] != 1){
+            tx.executeSql('SELECT * FROM Users', [], function (tx, res) {
+                $.each(res.rows, function (key, value) {
+                    if (value['IsAdmin'] != 1) {
                         $('#usersList').append(`<option value="${value['Id']}" > ${value['Username']} </option>`)
                     }
                 })
@@ -205,61 +205,44 @@ function addTransaction() {
     var qty = $('#quantity').val();
     var type = $('#type').val();
 
+    if(qty > 0){
 
-    db.transaction(function (tx) {
-        tx.executeSql('SELECT * FROM Items WHERE Id = ? ', [itemId], function (tx, res) {
+        db.transaction(function (tx) {
+            tx.executeSql('SELECT * FROM Items WHERE Id = ? ', [itemId], function (tx, res) {
 
-            var itemName = res.rows[0]["Name"];
-            var itemQuantity = res.rows[0]["Quantity"];
-            localStorage.lastInvoice++;
+                var itemName = res.rows[0]["Name"];
+                var itemQuantity = res.rows[0]["Quantity"];
+                localStorage.lastInvoice++;
 
-            var fullDate = getDate();
+                var fullDate = getDate();
 
-            if (type == 1) {
+                if (type == 1) {
 
-                if (itemQuantity >= qty) {
+                    if (itemQuantity >= qty) {
 
-                    var insertSql = 'INSERT INTO Invoice (Id , TransactionDate , CustomerName , Type , ItemName , Quantity) VALUES (? , ? , ? , ? , ? , ?)';
-                    tx.executeSql(insertSql,
-                        [localStorage.lastInvoice, fullDate, cstName, type, itemName, qty],
-                        function (tx, res) {
-                            console.log(res);
-                            alert('Transaction Added');
-                        });
+                        insertToInvoice(localStorage.lastInvoice, fullDate, cstName, type, itemName, qty);
+                        updateItemQuantity(Number(itemQuantity) - Number(qty), itemId);
 
-                    tx.executeSql('UPDATE Items SET Quantity = ? WHERE Id = ?', [Number(itemQuantity) - Number(qty), itemId], function (tx, res) {
-                        console.log(res);
-                        alert('Item Updated with transaction');
-                    })
+                    } else {
+                        alert("You don't have that quantity");
+                    }
 
+                } else if (type == 0) {
+
+                    insertToInvoice(localStorage.lastInvoice, fullDate, cstName, type, itemName, qty);
+                    updateItemQuantity(Number(qty) + Number(itemQuantity), itemId);
 
                 } else {
-                    alert("You don't have that quantity");
+
+                    alert("Wrong Data");
                 }
 
-            } else if (type == 0) {
-
-
-                var insertSql = 'INSERT INTO Invoice (Id , TransactionDate , CustomerName , Type , ItemName , Quantity) VALUES (? , ? , ? , ? , ? , ?)';
-                tx.executeSql(insertSql,
-                    [localStorage.lastInvoice, fullDate, cstName, type, itemName, qty],
-                    function (tx, res) {
-                        console.log(res);
-                        alert('Transaction Added');
-                    });
-
-                tx.executeSql('UPDATE Items SET Quantity = ? WHERE Id = ?', [Number(qty) + Number(itemQuantity), itemId], function (tx, res) {
-                    console.log(res);
-                    alert('Item Updated with transaction');
-                })
-
-            } else {
-
-                alert("Wrong Data");
-            }
-
+            });
         });
-    });
+
+    }else {
+        alert("enter a valid Quantity");
+    }
 
 }
 
@@ -268,16 +251,16 @@ function deleteUser() {
     var userId = $('#usersList').val();
 
     db.transaction(function (tx) {
-        tx.executeSql('DELETE FROM Users WHERE Id = ? ' , [userId] , function () {
+        tx.executeSql('DELETE FROM Users WHERE Id = ? ', [userId], function () {
             alert(`User Is Deleted!`);
         });
     });
-
 }
 
 function redirect(location) {
     window.location.href = location;
 }
+
 
 function getDate() {
 
@@ -289,6 +272,35 @@ function getDate() {
     var fullDate = `${day} / ${month} / ${year}`;
 
     return fullDate;
+}
+
+
+function insertToInvoice(id, transDate, cstName, type, itemName, Q) {
+
+    var insertSql = 'INSERT INTO Invoice (Id , TransactionDate , CustomerName , Type , ItemName , Quantity) VALUES (? , ? , ? , ? , ? , ?)';
+    db.transaction(function (tx) {
+        tx.executeSql(insertSql,
+            [id, transDate, cstName, type, itemName, Q],
+            function (tx, res) {
+                console.log(res);
+                alert('Transaction Added');
+            });
+    });
+}
+
+
+function updateItemQuantity(newQuantity, itemId) {
+
+    var updateSql = 'UPDATE Items SET Quantity = ? WHERE Id = ?';
+
+    db.transaction(function (tx) {
+        tx.executeSql(updateSql,
+            [newQuantity, itemId],
+            function () {
+                alert('Item Updated with transaction');
+            });
+    });
+
 }
 
 

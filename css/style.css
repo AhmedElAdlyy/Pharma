@@ -1,27 +1,33 @@
-body{
+body
+{
 	background-color: #E3D3E4;
 }
 
-.navBarItem{
-	 color: #00FFCD !important;
+.navBarItem
+{
+	color: #00FFCD !important;
 }
 
-#loginForm{
-	border:2px solid #873D48;
+#loginForm
+{
+	border: 2px solid #873D48;
 	border-radius: 15px;
 }
 
-#myNav{
+#myNav
+{
 	background-color: #664C43 !important;
 }
 
-.menuOfDropDown{
+.menuOfDropDown
+{
 	background-color: #664C43;
 	border-radius: 17px;
 	border: 1px solid #00FFCD;
 }
 
-.submitBtn{
+.submitBtn
+{
 	background-color: #873D48;
 	color: #00FFCD;
 	font-weight: bold;
@@ -29,14 +35,16 @@ body{
 	margin-top: 10px;
 }
 
-.submitBtn:hover{
+.submitBtn:hover
+{
 
 	background-color: #664C43 !important;
 	color: #00FFCD;
 
 }
 
-.inputField{
+.inputField
+{
 	border: 1px solid #CD758F;
 	border-radius: 10px;
 }
@@ -47,18 +55,21 @@ input:focus
 	box-shadow: 0 0 10px #CD758F !important;
 }
 
-label{
+label
+{
 	color: #664C43;
 	font-weight: bold;
 }
 
-h1{
-	color:#873D48;
+h1
+{
+	color: #873D48;
 	text-shadow: 2px 2px;
 }
 
-footer{
-	background-color:#664C43;
+footer
+{
+	background-color: #664C43;
 	color: #00FFCD !important;
 
 }
